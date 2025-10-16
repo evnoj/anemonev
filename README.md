@@ -26,6 +26,20 @@ git clone https://github.com/Speyll/anemone
 theme = "anemone"
 ```
 
+3. Add variables to the `[extras]` section of `config.toml`:
+```toml
+[extra]
+header_nav = [
+  { url = "/", name_en = "Home" },
+  { url = "/blog/", name_en = "Blog" },
+]
+```
+
+4. Ensure the correct templates are being used.
+- `blog/_index.html` should have `template = "section.html"`
+
+5. Ensure you don't have templates defined in the site's `templates` directory that are overriding the templates in the theme's `templates` directory.
+
 ## Release Notes
 
 #### 2025-04-09
