@@ -7,8 +7,6 @@ I also use it on my own [website.](https://speyllsite.pages.dev/)
 
 Anemone is a versatile Zola theme that comes with both light and dark variants. You can easily switch between the light and dark themes to suit your preferences.
 
-![Anemone Light and Dark Theme](screenshot.png)
-
 ## Installation
 
 To get started with Anemone, follow these simple steps:
