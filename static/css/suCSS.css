@@ -8,26 +8,38 @@
   --standard-border-radius: 5px;
 
   /* Day theme colors */
-  --bg-day: #EEEEEE;
-  --bg-light-day: #CBCDCD;
-  --text-day: #41474E;
-  --text-light-day: #646868;
-  --accent-day: #D26878;
-  --accent-light-day: #e08f67;
+  --bg-day: #f2eed2;
+  --bg-light-day: #f2ecbc;
+  --text-day: #545464;
+  --text-light-day: #5e5e7f;
+  --accent-day: #949fb5;
+  --accent-light-day: #5e857a;
   --accent-text-day: var(--bg-day);
   --border-day: #646868;
-  --link-day: #5690AF;
+  --link-day: #4d699b;
+  --h1-accent-day: #d0a5a2;
+  --h2-accent-day: #d3a083;
+  --h3-accent-day: #c4a671;
+  --h4-accent-day: #8a9a7b;
+  --h5-accent-day: #8ba4b0;
+  --h6-accent-day: #a292a3;
 
   /* Night theme colors*/
-  --bg-night: #222529;
-  --bg-light-night: #464949;
-  --text-night: #D6D6D6;
-  --text-light-night: #DBD5BC;
-  --accent-night: #78B6AD;
-  --accent-light-night: #87C9E5;
+  --bg-night: #1F1F28;
+  --bg-light-night: #363646;
+  --text-night: #DCD7BA;
+  --text-light-night: #e4d794;
+  --accent-night: #8a9a7b;
+  --accent-light-night: #949fb5;
   --accent-text-day: var(--bg-night);
   --border-night: #DBD5BC;
-  --link-night: #E2AEA2;
+  --link-night: #c7d7e0;
+  --h1-accent-night: #938AA9;
+  --h2-accent-night: #8ba4b0;
+  --h3-accent-night: #8a9a7b;
+  --h4-accent-night: #c4a671;
+  --h5-accent-night: #d3a083;
+  --h6-accent-night: #c4746e;
 
   /* default to night theme*/
   --bg: var(--bg-night);
@@ -39,7 +51,12 @@
   --accent-text: var(--accent-text-night);
   --border: var(--border-night);
   --link: var(--link-night);
-
+  --h1-accent: var(--h1-accent-night);
+  --h2-accent: var(--h2-accent-night);
+  --h3-accent: var(--h3-accent-night);
+  --h4-accent: var(--h4-accent-night);
+  --h5-accent: var(--h5-accent-night);
+  --h6-accent: var(--h6-accent-night);
 }
 
 @media (prefers-color-scheme: light) {
@@ -55,6 +72,12 @@
     --accent-text: var(--accent-text-day);
     --border: var(--border-day);
     --link: var(--link-day);
+    --h1-accent: var(--h1-accent-day);
+    --h2-accent: var(--h2-accent-day);
+    --h3-accent: var(--h3-accent-day);
+    --h4-accent: var(--h4-accent-day);
+    --h5-accent: var(--h5-accent-day);
+    --h6-accent: var(--h6-accent-day);
   }
 }
 
@@ -72,6 +95,12 @@
     --accent-text: var(--accent-text-night);
     --border: var(--border-night);
     --link: var(--link-night);
+    --h1-accent: var(--h1-accent-night);
+    --h2-accent: var(--h2-accent-night);
+    --h3-accent: var(--h3-accent-night);
+    --h4-accent: var(--h4-accent-night);
+    --h5-accent: var(--h5-accent-night);
+    --h6-accent: var(--h6-accent-night);
   }
   
   img,
@@ -91,6 +120,12 @@
   --accent-text: var(--accent-text-day);
   --border: var(--border-day);
   --link: var(--link-day);
+  --h1-accent: var(--h1-accent-day);
+  --h2-accent: var(--h2-accent-day);
+  --h3-accent: var(--h3-accent-day);
+  --h4-accent: var(--h4-accent-day);
+  --h5-accent: var(--h5-accent-day);
+  --h6-accent: var(--h6-accent-day);
 }
 
 [data-theme="night"] {
@@ -104,6 +139,12 @@
   --accent-text: var(--accent-text-night);
   --border: var(--border-night);
   --link: var(--link-night);
+  --h1-accent: var(--h1-accent-night);
+  --h2-accent: var(--h2-accent-night);
+  --h3-accent: var(--h3-accent-night);
+  --h4-accent: var(--h4-accent-night);
+  --h5-accent: var(--h5-accent-night);
+  --h6-accent: var(--h6-accent-night);
 }
 
 [data-theme="night"] img,
@@ -166,21 +207,27 @@ body > footer {
 /* Format headers */
 h1 {
   font-size: 2rem;
+  text-decoration-color: var(--h1-accent);
 }
 h2 {
   font-size: 1.75rem;
+  text-decoration-color: var(--h2-accent);
 }
 h3 {
   font-size: 1.5rem;
+  text-decoration-color: var(--h3-accent);
 }
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
+  text-decoration-color: var(--h4-accent);
 }
 h5 {
-  font-size: 1rem;
+  font-size: 1.25rem;
+  text-decoration-color: var(--h5-accent);
 }
 h6 {
-  font-size: .75rem;
+  font-size: 1.1rem;
+  text-decoration-color: var(--h6-accent);
 }
 
 h1, h2,
