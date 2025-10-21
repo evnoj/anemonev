@@ -7,6 +7,9 @@ I also use it on my own [website.](https://speyllsite.pages.dev/)
 
 Anemone is a versatile Zola theme that comes with both light and dark variants. You can easily switch between the light and dark themes to suit your preferences.
 
+## quirks
+- expects to find `/css/syntax-theme-day.css` and `/css/syntax-theme-night.css`, these should be in `static/css` in your site, generated via the `highlight_theme = "css"` in `config.toml`
+
 ## Installation
 
 To get started with Anemone, follow these simple steps:
