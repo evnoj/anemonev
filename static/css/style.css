@@ -12,6 +12,10 @@
     align-items: center;
 }
 
+#footer-separator {
+  border-style: solid;
+}
+
 #footer-container {
   display: flex;
   flex-wrap: wrap;
