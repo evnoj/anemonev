@@ -25,6 +25,7 @@
   --accent-text-day: var(--bg-day);
   --border-day: #646868;
   --link-day: #4d699b;
+  --link-visited-day: #4a3a64;
   --h1-accent-day: #d0a5a2;
   --h2-accent-day: #d3a083;
   --h3-accent-day: #c4a671;
@@ -42,6 +43,7 @@
   --accent-text-day: var(--bg-night);
   --border-night: #DBD5BC;
   --link-night: #c7d7e0;
+  --link-visited-night: #c0bcd9;
   --h1-accent-night: #938AA9;
   --h2-accent-night: #8ba4b0;
   --h3-accent-night: #8a9a7b;
@@ -59,6 +61,7 @@
   --accent-text: var(--accent-text-night);
   --border: var(--border-night);
   --link: var(--link-night);
+  --link-visited: var(--link-visited-night);
   --h1-accent: var(--h1-accent-night);
   --h2-accent: var(--h2-accent-night);
   --h3-accent: var(--h3-accent-night);
@@ -80,6 +83,7 @@
     --accent-text: var(--accent-text-day);
     --border: var(--border-day);
     --link: var(--link-day);
+    --link-visited: var(--link-visited-day);
     --h1-accent: var(--h1-accent-day);
     --h2-accent: var(--h2-accent-day);
     --h3-accent: var(--h3-accent-day);
@@ -103,6 +107,7 @@
     --accent-text: var(--accent-text-night);
     --border: var(--border-night);
     --link: var(--link-night);
+    --link-visited: var(--link-visited-night);
     --h1-accent: var(--h1-accent-night);
     --h2-accent: var(--h2-accent-night);
     --h3-accent: var(--h3-accent-night);
@@ -128,6 +133,7 @@
   --accent-text: var(--accent-text-day);
   --border: var(--border-day);
   --link: var(--link-day);
+  --link-visited: var(--link-visited-day);
   --h1-accent: var(--h1-accent-day);
   --h2-accent: var(--h2-accent-day);
   --h3-accent: var(--h3-accent-day);
@@ -147,6 +153,7 @@
   --accent-text: var(--accent-text-night);
   --border: var(--border-night);
   --link: var(--link-night);
+  --link-visited: var(--link-visited-night);
   --h1-accent: var(--h1-accent-night);
   --h2-accent: var(--h2-accent-night);
   --h3-accent: var(--h3-accent-night);
@@ -296,6 +303,10 @@ a:visited {
   text-decoration: none;
   border-radius: .125rem;
   color: var(--link);
+}
+
+a:visited {
+  color: var(--link-visited);
 }
 
 a:hover {
