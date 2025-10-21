@@ -4,14 +4,10 @@ class ThemeManager {
         if (!this.toggle) return;
 
         this.icon = document.getElementById('theme-icon');
-        const { iconBase, iconDark, iconLight, soundSrc } = this.toggle.dataset;
+        const { iconBase, iconNight, iconDay } = this.toggle.dataset;
         this.iconBase = iconBase;
-        this.iconDark = iconDark;
-        this.iconLight = iconLight;
-
-        // Create audio element lazily only when needed
-        this.sound = null;
-        this.soundSrc = soundSrc;
+        this.iconNight = iconNight;
+        this.iconDay = iconDay;
 
         this.init();
     }
@@ -24,29 +20,20 @@ class ThemeManager {
     setInitialTheme() {
         const savedTheme = localStorage.getItem('theme');
         const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const initialTheme = savedTheme || (systemDark ? 'dark' : 'light');
+        const initialTheme = savedTheme || (systemDark ? 'night' : 'day');
 
         document.documentElement.setAttribute('data-theme', initialTheme);
-        this.updateIcon(initialTheme === 'dark');
+        this.updateIcon(initialTheme === 'night');
     }
 
     toggleTheme() {
         document.body.classList.add('theme-transition');
-        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-        const newTheme = isDark ? 'light' : 'dark';
+        const isNight = document.documentElement.getAttribute('data-theme') === 'night';
+        const newTheme = isNight ? 'day' : 'night';
 
         document.documentElement.setAttribute('data-theme', newTheme);
-        this.updateIcon(!isDark);
+        this.updateIcon(!isNight);
         localStorage.setItem('theme', newTheme);
-
-        // Lazy load sound only when needed
-        if (!this.sound && this.soundSrc) {
-            this.sound = new Audio(this.soundSrc);
-        }
-
-        if (this.sound) {
-            this.sound.play().catch(() => {});
-        }
 
         // Use requestAnimationFrame for better performance on transition
         requestAnimationFrame(() => {
@@ -56,14 +43,13 @@ class ThemeManager {
         });
     }
 
-    updateIcon(isDark) {
+    updateIcon(isNight) {
         if (this.icon) {
             this.icon.setAttribute('href',
-                `${this.iconBase}${isDark ? this.iconDark : this.iconLight}`);
+                `${this.iconBase}${isNight ? this.iconNight : this.iconDay}`);
         }
     }
 }
-
 
 // Initialize when content is loaded
 if (document.readyState === 'loading') {

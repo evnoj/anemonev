@@ -7,80 +7,108 @@
   --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   --standard-border-radius: 5px;
 
-  /* default colors */
-  --bg: #EEEEEE;
-  --bg-light: #CBCDCD;
-  --text: #41474E;
-  --text-light: #646868;
-  --accent: #D26878;
-  --accent-light: #e08f67;
-  --accent-text: var(--bg);
-  --border: #646868;
-  --link: #5690AF;
+  /* Day theme colors */
+  --bg-day: #EEEEEE;
+  --bg-light-day: #CBCDCD;
+  --text-day: #41474E;
+  --text-light-day: #646868;
+  --accent-day: #D26878;
+  --accent-light-day: #e08f67;
+  --accent-text-day: var(--bg-day);
+  --border-day: #646868;
+  --link-day: #5690AF;
+
+  /* Night theme colors*/
+  --bg-night: #222529;
+  --bg-light-night: #464949;
+  --text-night: #D6D6D6;
+  --text-light-night: #DBD5BC;
+  --accent-night: #78B6AD;
+  --accent-light-night: #87C9E5;
+  --accent-text-day: var(--bg-night);
+  --border-night: #DBD5BC;
+  --link-night: #E2AEA2;
+
+  /* default to night theme*/
+  --bg: var(--bg-night);
+  --bg-light: var(--bg-light-night);
+  --text: var(--text-night);
+  --text-light: var(--text-light-night);
+  --accent: var(--accent-night);
+  --accent-light: var(--accent-light-night);
+  --accent-text: var(--accent-text-night);
+  --border: var(--border-night);
+  --link: var(--link-night);
+
 }
 
-/* theme media queries */
+@media (prefers-color-scheme: light) {
+  :root,
+  ::backdrop {
+    color-scheme: day;
+    --bg: var(--bg-day);
+    --bg-light: var(--bg-light-day);
+    --text: var(--text-day);
+    --text-light: var(--text-light-day);
+    --accent: var(--accent-day);
+    --accent-light: var(--accent-light-day);
+    --accent-text: var(--accent-text-day);
+    --border: var(--border-day);
+    --link: var(--link-day);
+  }
+}
+
+/* Apply dark colors - both auto and manual */
 @media (prefers-color-scheme: dark) {
   :root,
   ::backdrop {
-    color-scheme: dark;
-    --bg: #222529;
-    --bg-light: #464949;
-    --text: #D6D6D6;
-    --text-light: #DBD5BC;
-    --accent: #78B6AD;
-    --accent-light: #87C9E5;
-    --accent-text: var(--bg);
-    --border: #DBD5BC;
-    --link: #E2AEA2;
+    color-scheme: night;
+    --bg: var(--bg-night);
+    --bg-light: var(--bg-light-night);
+    --text: var(--text-night);
+    --text-light: var(--text-light-night);
+    --accent: var(--accent-night);
+    --accent-light: var(--accent-light-night);
+    --accent-text: var(--accent-text-night);
+    --border: var(--border-night);
+    --link: var(--link-night);
   }
+  
   img,
   video {
     opacity: 0.8;
   }
 }
 
-@media (prefers-color-scheme: light) {
-  :root,
-  ::backdrop {
-    color-scheme: light;
-    --bg: #EEEEEE;
-    --bg-light: #CBCDCD;
-    --text: #41474E;
-    --text-light: #646868;
-    --accent: #D26878;
-    --accent-light: #e08f67;
-    --accent-text: var(--bg);
-    --border: #646868;
-    --link: #5690AF;
-  }
+[data-theme="day"] {
+  color-scheme: day;
+  --bg: var(--bg-day);
+  --bg-light: var(--bg-light-day);
+  --text: var(--text-day);
+  --text-light: var(--text-light-day);
+  --accent: var(--accent-day);
+  --accent-light: var(--accent-light-day);
+  --accent-text: var(--accent-text-day);
+  --border: var(--border-day);
+  --link: var(--link-day);
 }
 
-[data-theme="light"] {
-  /* default (light) theme */
-  color-scheme: light;
-    --bg: #EEEEEE;
-    --bg-light: #CBCDCD;
-    --text: #41474E;
-    --text-light: #646868;
-    --accent: #D26878;
-    --accent-light: #e08f67;
-    --accent-text: var(--bg);
-    --border: #646868;
-    --link: #5690AF;
+[data-theme="night"] {
+  color-scheme: night;
+  --bg: var(--bg-night);
+  --bg-light: var(--bg-light-night);
+  --text: var(--text-night);
+  --text-light: var(--text-light-night);
+  --accent: var(--accent-night);
+  --accent-light: var(--accent-light-night);
+  --accent-text: var(--accent-text-night);
+  --border: var(--border-night);
+  --link: var(--link-night);
 }
 
-[data-theme="dark"] {
-  color-scheme: dark;
-    --bg: #222529;
-    --bg-light: #464949;
-    --text: #D6D6D6;
-    --text-light: #DBD5BC;
-    --accent: #78B6AD;
-    --accent-light: #87C9E5;
-    --accent-text: var(--bg);
-    --border: #DBD5BC;
-    --link: #E2AEA2;
+[data-theme="night"] img,
+[data-theme="night"] video {
+  opacity: 0.8;
 }
 
 ::selection,
@@ -159,6 +187,8 @@ h1, h2,
 h3, h4,
 h5, h6 {
   margin: .5em 0  .5em 0;
+  text-decoration: underline;
+  text-underline-offset: 0.1em;
 }
 
 /* Fix line height when title wraps */
@@ -166,12 +196,14 @@ h1, h2, h3 {
   line-height: 1.1;
 }
 
+/*
 h1::before, h2::before,
 h3::before, h4::before,
 h5::before, h6::before {
   color: var(--accent);
   content: '# '
 }
+*/
 
 @media only screen and (max-width: 720px) {
   h1 {
@@ -218,7 +250,7 @@ a:hover {
 
 /* format lists */
 ul {
-  list-style: square;
+  list-style-type: disc;
   margin-top: .25rem;
   margin-bottom: .25rem;
 }
