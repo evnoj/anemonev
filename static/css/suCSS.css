@@ -347,12 +347,19 @@ li {
 }
 
 ul li::marker {
-  content: '» ';
   color: var(--accent);
 }
 
 ol li::marker {
   color: var(--accent);
+}
+
+
+/* details blocks as a list can cause weirdness with the bullet in safari
+ * just make the bullet marker invisible, so a details element in a list
+ * is just indented and sized to nest properly */
+li:has(> details)::marker {
+  color: transparent;
 }
 
 /* Use flexbox to allow items to wrap, as needed */
@@ -381,6 +388,17 @@ aside, details, pre, progress {
   border-radius: var(--standard-border-radius);
 }
 
+/* nested details */
+details > details {
+  background-color: var(--bg);
+}
+
+/* lists in details */
+details > ul,
+details > ol {
+  padding-left: 1rem;
+}
+
 aside {
   font-size: 1rem;
   width: 35%;
@@ -402,7 +420,7 @@ aside {
 }
 
 details {
-  padding: .5rem;
+  padding: .25rem 0.5rem;
 }
 
 summary {
@@ -813,6 +831,3 @@ sup {
 sub {
   top: 0.3em;
 }
-
-/* syntax highlighting */
-/* to make syntax highlighting work when changing color themes, need t
