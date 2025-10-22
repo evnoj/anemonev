@@ -235,6 +235,14 @@ body > footer {
   font-size: .875;
 }
 
+h1, h2,
+h3, h4,
+h5, h6 {
+  margin: .5em 0  .5em 0;
+  text-decoration: underline;
+  text-underline-offset: 0.1em;
+}
+
 /* Format headers */
 h1 {
   font-size: 2rem;
@@ -261,14 +269,6 @@ h6 {
   text-decoration-color: var(--h6-accent);
 }
 
-h1, h2,
-h3, h4,
-h5, h6 {
-  margin: .5em 0  .5em 0;
-  text-decoration: underline;
-  text-underline-offset: 0.1em;
-}
-
 /* Fix line height when title wraps */
 h1, h2, h3 {
   line-height: 1.1;
@@ -283,6 +283,7 @@ h5::before, h6::before {
 }
 */
 
+/*
 @media only screen and (max-width: 720px) {
   h1 {
     font-size: 1.5rem;
@@ -303,6 +304,7 @@ h5::before, h6::before {
     font-size: .25rem;
   }
 }
+*/
 
 p {
   margin: 1rem 0;
@@ -830,4 +832,20 @@ sup {
 
 sub {
   top: 0.3em;
+}
+
+a.zola-anchor,
+a.zola-anchor:hover {
+  display: inline-block;
+  color: var(--link);
+  text-decoration: none;
+}
+
+:is(h1, h2, h3, h4, h5, h6) .zola-anchor {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+:is(h1, h2, h3, h4, h5, h6):hover .zola-anchor {
+  opacity: 1;
 }
