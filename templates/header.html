@@ -1,0 +1,22 @@
+<div class="header-container">
+    <a href="{{ get_url(path='/') }}" id="header-title">evnoj.net</a>
+    <nav id="nav-bar">
+        {% for nav_item in config.extra.header_nav %}
+        <a href="{{ nav_item.url }}" class="{% if current_url is defined and nav_item.url == current_url %}active{% endif %}">
+            {% set language_key = 'name_' ~ current_lang %}
+            {{ nav_item[language_key] }}
+        </a>
+        <span>|</span>
+        {% endfor %}
+
+        <div class="theme-toggle" id="theme-toggle" role="button" tabindex="0" aria-label="Toggle theme"
+            data-icon-base="{{ get_url(path='icons.svg') }}"
+            data-icon-night="#nightMode"
+            data-icon-day="#dayMode">
+            <svg class="icon">
+                <use id="theme-icon"></use>
+            </svg>
+        </div>
+    </nav>
+</div>
+<hr class="header-separator">
