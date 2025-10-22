@@ -1,8 +1,3 @@
-:root {
-    --icon-size: 1.3rem;
-    --icon-color: var(--text);
-}
-
 #nav-bar {
     padding: 0.625rem 0 0;
     display: flex;
@@ -47,18 +42,18 @@
 
 /* icons settings */
 .icon {
-    width: var(--icon-size);
-    height: var(--icon-size);
+    width: 1.3rem;
+    height: 1.3rem;
     display: inline-block;
     vertical-align: middle;
-    color: var(--icon-color);
+    color: var(--text);
     fill: currentColor;
     transition: color 0.3s ease;
     cursor: pointer;
 }
 
 .icon:hover {
-    --icon-color: var(--accent);
+  color: var(--accent);
 }
 
 /* Theme toggle specific styles */
@@ -72,7 +67,7 @@
 }
 
 .theme-toggle:hover .icon {
-    --icon-color: var(--accent);
+  color: var(--accent);
 }
 
 .theme-toggle:active {

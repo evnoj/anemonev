@@ -231,7 +231,7 @@ body > * {
 }
 
 body > footer {
-  color: var(--text-light);
+  color: var(--text);
   font-size: .875;
 }
 
