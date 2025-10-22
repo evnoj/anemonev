@@ -1,3 +1,6 @@
+/*@import url("syntax-theme-night.css") (prefers-color-scheme: dark);
+@import url("syntax-theme-day.css") (prefers-color-scheme: light);*/
+
 @font-face {
   font-family: 'Fantasque Sans Mono';
   src: url('FantasqueSansMono-Regular.woff2') format('woff2');
@@ -25,7 +28,9 @@
   --accent-text-day: var(--bg-day);
   --border-day: #646868;
   --link-day: #4d699b;
-  --link-visited-day: #4a3a64;
+  --link-visited-day: #624c83;
+  --success-day: #6e915f;
+  --fail-day: #C34043;
   --h1-accent-day: #d0a5a2;
   --h2-accent-day: #d3a083;
   --h3-accent-day: #c4a671;
@@ -44,6 +49,8 @@
   --border-night: #DBD5BC;
   --link-night: #c7d7e0;
   --link-visited-night: #c0bcd9;
+  --success-night: #98BB6C;
+  --fail-night: #d7474b;
   --h1-accent-night: #938AA9;
   --h2-accent-night: #8ba4b0;
   --h3-accent-night: #8a9a7b;
@@ -62,6 +69,8 @@
   --border: var(--border-night);
   --link: var(--link-night);
   --link-visited: var(--link-visited-night);
+  --success: var(--success-night);
+  --fail: var(--fail-night);
   --h1-accent: var(--h1-accent-night);
   --h2-accent: var(--h2-accent-night);
   --h3-accent: var(--h3-accent-night);
@@ -84,6 +93,8 @@
     --border: var(--border-day);
     --link: var(--link-day);
     --link-visited: var(--link-visited-day);
+    --success: var(--success-day);
+    --fail: var(--fail-day);
     --h1-accent: var(--h1-accent-day);
     --h2-accent: var(--h2-accent-day);
     --h3-accent: var(--h3-accent-day);
@@ -93,7 +104,6 @@
   }
 }
 
-/* Apply dark colors - both auto and manual */
 @media (prefers-color-scheme: dark) {
   :root,
   ::backdrop {
@@ -108,6 +118,8 @@
     --border: var(--border-night);
     --link: var(--link-night);
     --link-visited: var(--link-visited-night);
+    --success: var(--success-night);
+    --fail: var(--fail-night);
     --h1-accent: var(--h1-accent-night);
     --h2-accent: var(--h2-accent-night);
     --h3-accent: var(--h3-accent-night);
@@ -134,6 +146,8 @@
   --border: var(--border-day);
   --link: var(--link-day);
   --link-visited: var(--link-visited-day);
+  --success: var(--success-day);
+  --fail: var(--fail-day);
   --h1-accent: var(--h1-accent-day);
   --h2-accent: var(--h2-accent-day);
   --h3-accent: var(--h3-accent-day);
@@ -154,6 +168,8 @@
   --border: var(--border-night);
   --link: var(--link-night);
   --link-visited: var(--link-visited-night);
+  --success: var(--success-night);
+  --fail: var(--fail-night);
   --h1-accent: var(--h1-accent-night);
   --h2-accent: var(--h2-accent-night);
   --h3-accent: var(--h3-accent-night);
@@ -659,14 +675,59 @@ kbd, samp {
   font-family: var(--mono-font);
 }
 
-
 pre {
+  position: relative;
   border: 1px solid var(--accent);
   max-height: 30rem;
   padding: .625rem;
   overflow: auto;
+  /*background-color: var(--bg) !important;*/
   font-style: monospace;
-  white-space: pre;
+  white-space: pre-wrap;
+}
+
+/* codeblock header */
+pre code[data-lang]::before {
+  content: attr(data-lang);
+  padding: .3rem;
+  display: block;
+  background-color: var(--bg-light);
+  color: var(--text);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 1rem;
+}
+
+.codecopy-container {
+  position: absolute;
+  display: flex;
+  top: 0.2rem;
+  right: 0.2rem;
+}
+
+/* codeblock copy button */
+.codecopy-button {
+  position: relative;
+  padding: 0rem 0.2rem;
+  cursor: pointer;
+  border: 0.1rem solid var(--link);
+  border-radius: var(--standard-border-radius);
+  color: var(--text-light);
+  background-color: var(--bg);
+  font-family: var(--mono-font);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.codecopy-button:hover {
+  opacity: 1;
+}
+
+.codecopy-status {
+  padding: 0.2rem 0.2rem 0rem;
+  opacity: 0;
 }
 
 p code,
@@ -751,3 +812,5 @@ sub {
   top: 0.3em;
 }
 
+/* syntax highlighting */
+/* to make syntax highlighting work when changing color themes, need t
