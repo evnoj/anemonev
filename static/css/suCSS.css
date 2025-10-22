@@ -689,6 +689,8 @@ pre {
 /* codeblock header */
 pre code[data-lang]::before {
   content: attr(data-lang);
+  text-decoration: underline;
+  text-underline-offset: 0.1em;
   padding: .3rem;
   display: block;
   background-color: var(--bg-light);
