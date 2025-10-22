@@ -1,0 +1,8 @@
+<details>
+    {# see here for discussion on a details shortcode: https://zola.discourse.group/t/getting-phrasing-only-content-through-markdown-intact/2631/4 #}
+    <summary>{{ summary | markdown(inline=true) | safe }}</summary>
+
+    {# to trim leading spaces from each line, I split based on the string "  " (2 spaces), the string to split on is not included in the resulting strings, then join the resulting strings together.
+    This is so that the shortcode can be used in a nested list and the list indentation can be used in the source file without it being present inside the actual details element#}
+    {{ body | split(pat="  ") | join(sep="") | markdown | safe }}
+</details>
