@@ -833,19 +833,3 @@ sup {
 sub {
   top: 0.3em;
 }
-
-a.zola-anchor,
-a.zola-anchor:hover {
-  display: inline-block;
-  color: var(--link);
-  text-decoration: none;
-}
-
-:is(h1, h2, h3, h4, h5, h6) .zola-anchor {
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-:is(h1, h2, h3, h4, h5, h6):hover .zola-anchor {
-  opacity: 1;
-}

@@ -14,6 +14,7 @@
 
 #footer-separator {
   border-style: solid;
+  margin-bottom: 0;
 }
 
 #footer-container {
@@ -78,6 +79,13 @@
     transform: scale(0.95);
 }
 
+.icon.footer {
+  display: inline-block;
+  margin: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 /* footnotes */
 .footnote-definition {
   margin: 0 0 0 .125rem;
@@ -126,4 +134,21 @@
 /* shortcodes css */
 .webring {
   margin: .375rem;
+}
+
+/* header anchors */
+a.zola-anchor,
+a.zola-anchor:hover {
+  display: inline-block;
+  color: var(--link);
+  text-decoration: none;
+}
+
+:is(h1, h2, h3, h4, h5, h6) .zola-anchor {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+:is(h1, h2, h3, h4, h5, h6):hover .zola-anchor {
+  opacity: 1;
 }
