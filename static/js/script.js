@@ -44,6 +44,7 @@ class ThemeManager {
 
     toggleTheme() {
         document.body.classList.add('theme-transition');
+        document.getElementById('site-header').classList.add('theme-transition');
         const isNight = document.documentElement.getAttribute('data-theme') === 'night';
         const theme = isNight ? 'day' : 'night';
 
@@ -62,6 +63,7 @@ class ThemeManager {
         requestAnimationFrame(() => {
             setTimeout(() => {
                 document.body.classList.remove('theme-transition');
+                document.getElementById('site-header').classList.remove('theme-transition');
             }, 300);
     });
     }
