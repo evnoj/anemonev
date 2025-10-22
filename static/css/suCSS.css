@@ -22,6 +22,7 @@
   --bg-light-day: #e5ddb0;
   /*--bg-light-day: #f2ecbc;*/
   --text-day: #545464;
+  --text-transparent-day: rgba(84, 84, 100, .5);
   --text-light-day: #5e5e7f;
   --accent-day: #949fb5;
   --accent-light-day: #5e857a;
@@ -42,6 +43,7 @@
   --bg-night: #1F1F28;
   --bg-light-night: #363646;
   --text-night: #DCD7BA;
+  --text-transparent-night: rgba(220, 215, 186, .5);
   --text-light-night: #e4d794;
   --accent-night: #8a9a7b;
   --accent-light-night: #949fb5;
@@ -62,6 +64,7 @@
   --bg: var(--bg-night);
   --bg-light: var(--bg-light-night);
   --text: var(--text-night);
+  --text-transparent: var(--text-transparent-night);
   --text-light: var(--text-light-night);
   --accent: var(--accent-night);
   --accent-light: var(--accent-light-night);
@@ -86,6 +89,7 @@
     --bg: var(--bg-day);
     --bg-light: var(--bg-light-day);
     --text: var(--text-day);
+    --text-transparent: var(--text-transparent-day);
     --text-light: var(--text-light-day);
     --accent: var(--accent-day);
     --accent-light: var(--accent-light-day);
@@ -111,6 +115,7 @@
     --bg: var(--bg-night);
     --bg-light: var(--bg-light-night);
     --text: var(--text-night);
+    --text-transparent: var(--text-transparent-night);
     --text-light: var(--text-light-night);
     --accent: var(--accent-night);
     --accent-light: var(--accent-light-night);
@@ -139,6 +144,7 @@
   --bg: var(--bg-day);
   --bg-light: var(--bg-light-day);
   --text: var(--text-day);
+  --text-transparent: var(--text-transparent-day);
   --text-light: var(--text-light-day);
   --accent: var(--accent-day);
   --accent-light: var(--accent-light-day);
@@ -161,6 +167,7 @@
   --bg: var(--bg-night);
   --bg-light: var(--bg-light-night);
   --text: var(--text-night);
+  --text-transparent: var(--text-transparent-night);
   --text-light: var(--text-light-night);
   --accent: var(--accent-night);
   --accent-light: var(--accent-light-night);
@@ -390,6 +397,20 @@ aside, details, pre, progress {
   border-radius: var(--standard-border-radius);
 }
 
+details {
+  padding: .25rem 0.5rem;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 0.01em;
+  text-decoration-color: var(--text-transparent);
+  text-underline-offset: 0.1em;
+  word-break: break-word;
+}
+
 /* nested details */
 details > details {
   background-color: var(--bg);
@@ -419,16 +440,6 @@ aside {
     float: none;
     margin-inline-start: 0;
   }
-}
-
-details {
-  padding: .25rem 0.5rem;
-}
-
-summary {
-  cursor: pointer;
-  font-weight: bold;
-  word-break: break-all;
 }
 
 details[open] > summary + * {
