@@ -58,6 +58,21 @@ hr.footer-separator {
   align-items: center;
 }
 
+.post-sub-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 0.1rem;
+}
+
+.post-tags {
+  margin-bottom: .25em;
+}
+
+.post-date {
+  color: var(--text-light);
+  margin-bottom: .25em;
+}
 
 .accent-data {
   color: var(--accent);

@@ -245,7 +245,7 @@ body > footer {
 h1, h2,
 h3, h4,
 h5, h6 {
-  margin: .5em 0  .5em 0;
+  margin: .5em 0 0.1em;
   text-decoration: underline;
   text-underline-offset: 0.1em;
 }
@@ -314,7 +314,7 @@ h5::before, h6::before {
 */
 
 p {
-  margin: 1rem 0;
+  margin: 0.5rem 0rem;
 }
 
 p, li,
