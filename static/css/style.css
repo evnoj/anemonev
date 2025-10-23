@@ -186,7 +186,21 @@ hr.footer-separator {
   margin: .375rem;
 }
 
-/* header anchors */
+/* headers contains anchor links, ensure they get the header style not the link style*/
+a.zola-anchor {
+  color: inherit;
+  text-decoration-color: inherit;
+  scroll-margin-top: 0;
+  scroll-padding: 0;
+}
+
+:target {
+  scroll-margin-block: 3rem;
+}
+
+/* header anchors
+ * for use if setting anchors to left/right of header*/
+/*
 a.zola-anchor,
 a.zola-anchor:hover {
   display: inline-block;
@@ -202,3 +216,4 @@ a.zola-anchor:hover {
 :is(h1, h2, h3, h4, h5, h6):hover .zola-anchor {
   opacity: 1;
 }
+*/
