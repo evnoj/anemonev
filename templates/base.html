@@ -14,8 +14,9 @@
         <link rel="stylesheet" href="{{ get_url(path='css/suCSS.css') }}">
         <link rel="stylesheet" href="{{ get_url(path='css/style.css') }}">
 
-        <!-- Add favicon with appropriate sizes -->
-        <link rel="icon" href="{{ config.base_url }}/{{ config.extra.favicon | default(value='favicon.ico') }}">
+        <link rel="icon" href="/favicon.ico" sizes="32x32">
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-favicon.png"><!-- 180×180 -->
         {% block extra_head %}{% endblock %}
     </head>
     <body>
