@@ -49,6 +49,10 @@ hr.header-separator {
     align-items: center;
 }
 
+a.header-link {
+  color: var(--link);
+}
+
 hr.footer-separator {
   margin: 0;
   border: none;
