@@ -737,6 +737,12 @@ pre code[data-lang]::before {
   padding-left: 1rem;
 }
 
+/* give code padding if there's a header so first line isn't covered */
+pre code[data-lang] {
+  display: block;
+  padding-top: 2rem; /* Adjust this value based on your header height */
+}
+
 .codecopy-container {
   position: absolute;
   display: flex;
