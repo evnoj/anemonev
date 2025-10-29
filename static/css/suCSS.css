@@ -317,6 +317,11 @@ p {
   margin: 0.5rem 0rem;
 }
 
+/* give a paragraph following another paragraph a bit more space */
+p + p {
+  margin-top: .75rem;
+}
+
 p, li,
 figcaption {
   text-wrap: pretty;
