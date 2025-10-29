@@ -196,26 +196,32 @@
   background: var(--accent)
 }
 
-/* chromium scrollbars */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-  overflow: visible;
-}
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  width: 12px;
-}
 ::-webkit-scrollbar-track {
-  background: var(--bg-light);
+  border-radius: var(--standard-border-radius);
+  background-color: var(--bg);
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+  border-radius: var(--standard-border-radius);
+  background-color: var(--bg);
+  overflow: visible;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: var(--standard-border-radius);
+  background-color: var(--accent);
+}
+
+
 /* firefox scrollbars */
+/*
 * {
   scrollbar-color: var(--accent) var(--bg-light);
   scrollbar-width: thin;
   scrollbar-height: thin;
 }
+*/
 
 html {
   color-scheme: light dark;
@@ -716,10 +722,10 @@ kbd, samp {
 pre {
   position: relative;
   border: 1px solid var(--accent);
-  max-height: 30rem;
+  /*max-height: 30rem;*/
+  margin: 0.75rem 0;
   padding: .625rem;
   overflow: auto;
-  /*background-color: var(--bg) !important;*/
   font-style: monospace;
   white-space: pre-wrap;
 }
