@@ -1,0 +1,6 @@
+<details>
+    {# see here for discussion on a details shortcode: https://zola.discourse.group/t/getting-phrasing-only-content-through-markdown-intact/2631/4 #}
+    <summary>{{ summary | markdown(inline=true) | safe }}</summary>
+
+    {{ body | markdown | safe }}
+</details>
