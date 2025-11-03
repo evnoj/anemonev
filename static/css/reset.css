@@ -75,6 +75,11 @@ textarea, select, progress {
   font: inherit;
 }
 
+/* no default border on iframes */
+iframe {
+  border: none;
+}
+
 /* Make sure textareas without a rows attribute are not tiny */
 textarea:not([rows]) {
   min-height: 10em;
