@@ -47,7 +47,7 @@
   --text-light-night: #e4d794;
   --accent-night: #8a9a7b;
   --accent-light-night: #a6c1f7;
-  --accent-text-day: var(--bg-night);
+  --accent-text-night: var(--bg-night);
   --border-night: #DBD5BC;
   --link-night: #c7d7e0;
   --link-visited-night: #c0bcd9;
@@ -571,6 +571,7 @@ label[type="button"] {
   padding: 0.5rem 0.9rem;
   text-decoration: none;
   line-height: normal;
+  font-weight: bold;
 }
 
 .button[aria-disabled="true"],

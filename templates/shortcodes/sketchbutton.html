@@ -1,0 +1,12 @@
+<div {% if class %}class="{{class}}"{% endif %}>
+    <button onclick='this.outerHTML=`
+        <iframe
+          src="{{src}}"
+          width="{% if width %}{{width}}{% else %}auto{% endif %}"
+          height="{% if height %}{{height}}{% else %}auto{% endif %}"
+        >
+        </iframe>
+    `;'>
+    Load{% if description %} {{description}}{% endif %}{% if size %} (~{{size}}){% endif %}
+    </button>
+</div>
