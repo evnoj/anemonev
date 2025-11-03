@@ -1,4 +1,4 @@
 <div {% if class %}class="{{class}}"{% endif %}>
-  <img src="{{id}}" {% if alt %}alt="{{alt}}"{% endif %}>
+  <img src="{{src}}" {% if alt %}alt="{{alt}}"{% elif caption %}alt="{{caption}}"{% endif %}>
   {% if caption %}<div class="caption">{{caption}}</div>{% endif %}
 </div>

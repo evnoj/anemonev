@@ -84,8 +84,19 @@ hr.footer-separator {
 }
 
 .post-date {
-  color: var(--text-light);
+  color: var(--text-transparent);
   margin-bottom: .25em;
+}
+
+.article-img {
+  margin: 1rem 0;
+}
+
+.article-img > * {
+  display: block;
+  margin: 0 auto;
+  color: var(--text-transparent);
+  text-align: center;
 }
 
 .accent-data {

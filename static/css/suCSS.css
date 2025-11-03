@@ -680,8 +680,7 @@ video {
   max-width: 90%;
   height: auto;
   padding: .125rem;
-  border: dashed 2px var(--accent);
-  border-radius: 15px;
+  border-radius: .5rem;
 }
 
 figure {
