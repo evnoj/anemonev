@@ -1,0 +1,8 @@
+<div {% if class %}class="{{class}}"{% endif %}>
+    <iframe
+      src="{{src}}"
+      width="{% if width %}{{width}}{% else %}auto{% endif %}"
+      height="{% if height %}{{height}}{% else %}auto{% endif %}"
+    >
+    </iframe>
+</div>

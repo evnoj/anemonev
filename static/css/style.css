@@ -99,6 +99,12 @@ hr.footer-separator {
   text-align: center;
 }
 
+.article-sketch {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
 .accent-data {
   color: var(--accent);
 }
