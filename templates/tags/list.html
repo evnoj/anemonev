@@ -5,8 +5,8 @@
 <ul>
 {% for tag in terms %}
     <li>
-        <a href="{{ tag.permalink }}">#{{ tag.name }}</a>
-        ({{ tag.pages | length }} posts)
+        <a href="{{ tag.permalink }}">{{ tag.name }}</a>
+        ({{ tag.pages | length }} pages)
     </li>
 {% endfor %}
 </ul>
