@@ -134,6 +134,13 @@ Customize the display of the author's name in your blog posts by toggling the `d
 display_author = true
 ```
 
+#### Sticky Header
+The header can be made "sticky", so that it is always visible at the top of the viewport even as a page is scrolled down:
+```toml
+[extra]
+header_sticky = true
+```
+
 ### Webrings
 
 Add a webring with a shortcode:
