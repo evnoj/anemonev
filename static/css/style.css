@@ -20,6 +20,8 @@
   padding: 0 0.5rem;
   margin: 0;
   gap: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #header-title {
@@ -40,6 +42,8 @@ hr.header-separator {
 #site-title {
   padding-left: 0;
   display: flex;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
   align-items: center;
 }
 
