@@ -1,6 +1,6 @@
 <hr class="footer-separator">
 <div class="footer-container">
-    <p><a target="_blank" rel="noopener noreferrer" href="https://eclecticlight.co/2025/07/27/last-week-on-my-mac-🦉-no-ai-content/">🦉</a> human made</p>
+    <a href="{{ get_url(path='/about/ai_usage/') }}" title="AI usage"><svg class="icon footer"><use href="{{ get_url(path='icons.svg') }}#humanmade"/></svg></a>
     <div>
         <a href="{{ config.extra.github | safe }}" target="_blank" rel="noopener noreferrer" title="Github"><svg class="github icon footer"><use href="{{ get_url(path='icons.svg') }}#git"/></svg></a>
         <a href='{{ get_url(path="/feeds/") }}' title="RSS"><svg class="rss icon footer"><use href="{{ get_url(path='icons.svg') }}#rss"/></svg></a>
